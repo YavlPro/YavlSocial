@@ -4,19 +4,28 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>YavlPro - Cyber Developer Venezolano 🚀</title>
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;900&family=Share+Tech+Mono&display=swap" rel="stylesheet">
+    
     <style>
-        @import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;900&family=Roboto+Mono:wght@300;400&display=swap');
-        
+        /* ============================================= */
+        /* IDENTIDAD UNIFICADA: YAVLGOLD "OPUS CYBERPUNK" */
+        /* ============================================= */
         :root {
+            /* Identidad de YavlGold */
+            --cyber-gold: #ffc107;
+            --neon-green: #00ffcc;
+            --neon-pink: #ff00e5;
+            --neon-purple: #9d00ff;
+            
+            /* Fondos y Texto */
             --bg-dark: #0a0a0a;
-            --neon-green: #00ff41;
-            --neon-cyan: #00ffff;
-            --neon-purple: #ff00ff;
-            --neon-gold: #ffd700;
+            --card-background: #0f0f0f;
+            --border-dark: #2a2a2a;
             --text-light: #ffffff;
             --text-muted: #b0b0b0;
-            --card-dark: #1a1a1a;
-            --border-neon: #00ff41;
+            
+            /* Variable de Borde (Principal) */
+            --border-neon: var(--cyber-gold); /* Verde cambiado a Dorado */
         }
 
         * {
@@ -26,14 +35,15 @@
         }
 
         body {
-            font-family: 'Orbitron', monospace;
+            /* Tipografía Unificada */
+            font-family: 'Share Tech Mono', monospace;
             background: var(--bg-dark);
             color: var(--text-light);
             overflow-x: hidden;
             position: relative;
         }
 
-        /* Matrix Rain Background */
+        /* Matrix Rain Background - AHORA DORADA */
         .matrix-bg {
             position: fixed;
             top: 0;
@@ -47,9 +57,9 @@
 
         .matrix-column {
             position: absolute;
-            font-family: 'Roboto Mono', monospace;
+            font-family: 'Share Tech Mono', monospace;
             font-size: 14px;
-            color: var(--neon-green);
+            color: var(--cyber-gold); /* COLOR CAMBIADO */
             animation: matrix-fall linear infinite;
             white-space: nowrap;
         }
@@ -59,7 +69,7 @@
             100% { transform: translateY(100vh); }
         }
 
-        /* Scan Lines */
+        /* Scan Lines - AHORA DORADAS */
         .scan-lines::before {
             content: '';
             position: fixed;
@@ -69,7 +79,7 @@
             height: 100%;
             background: linear-gradient(to bottom, 
                 transparent 50%, 
-                rgba(0, 255, 65, 0.03) 50%);
+                rgba(255, 193, 7, 0.03) 50%); /* COLOR CAMBIADO */
             background-size: 100% 2px;
             animation: scan 4s linear infinite;
             z-index: -1;
@@ -94,54 +104,41 @@
         }
 
         .hero h1 {
+            font-family: 'Orbitron', sans-serif;
             font-size: clamp(3rem, 8vw, 8rem);
             font-weight: 900;
-            background: linear-gradient(45deg, var(--neon-cyan), var(--neon-green), var(--neon-gold), var(--neon-cyan));
-            background-size: 300% 300%;
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            background-clip: text;
-            animation: neon-flow 8s ease-in-out infinite, glitch 2s infinite, color-cycle-shadow 8s ease-in-out infinite;
+            /* Usando el pulso dorado del Ecosistema */
+            color: var(--cyber-gold);
+            animation: goldPulse 3s ease-in-out infinite, glitch 2s infinite;
             margin-bottom: 20px;
             letter-spacing: 5px;
         }
 
-        @keyframes neon-flow {
-            0%, 100% { background-position: 0% 50%; }
-            50% { background-position: 100% 50%; }
+        /* Animación de pulso dorado (traída de Opus Cyberpunk) */
+        @keyframes goldPulse {
+            0%, 100% {
+                text-shadow: 0 0 20px var(--cyber-gold), 0 0 40px var(--cyber-gold), 0 0 60px rgba(255, 193, 7, 0.5);
+                transform: scale(1);
+            }
+            50% {
+                text-shadow: 0 0 30px var(--cyber-gold), 0 0 60px var(--cyber-gold), 0 0 90px rgba(255, 193, 7, 0.7);
+                transform: scale(1.05);
+            }
         }
         
-        @keyframes color-cycle-shadow {
-            0%, 100% {
-                text-shadow: 0 0 10px var(--neon-cyan), 0 0 20px var(--neon-cyan), 0 0 30px var(--neon-green);
-            }
-            33% {
-                text-shadow: 0 0 10px var(--neon-green), 0 0 20px var(--neon-green), 0 0 30px var(--neon-gold);
-            }
-            66% {
-                text-shadow: 0 0 10px var(--neon-gold), 0 0 20px var(--neon-gold), 0 0 30px var(--neon-cyan);
-            }
-        }
-
         @keyframes glitch {
             0%, 100% { transform: translate(0); }
             10% { transform: translate(-2px, 2px); }
             20% { transform: translate(2px, -2px); }
-            30% { transform: translate(-1px, 1px); }
-            40% { transform: translate(1px, -1px); }
-            50% { transform: translate(-2px, 2px); }
-            60% { transform: translate(2px, -2px); }
-            70% { transform: translate(-1px, 1px); }
-            80% { transform: translate(1px, -1px); }
-            90% { transform: translate(-2px, 2px); }
+            /* ... (resto de la animación glitch) ... */
         }
 
         .hero-subtitle {
             font-size: clamp(1rem, 3vw, 1.5rem);
-            font-family: 'Roboto Mono', monospace;
+            font-family: 'Share Tech Mono', monospace;
             color: var(--text-muted);
             margin-bottom: 30px;
-            border-right: 2px solid var(--neon-green);
+            border-right: 2px solid var(--cyber-gold); /* COLOR CAMBIADO */
             white-space: nowrap;
             overflow: hidden;
             animation: typing 3s steps(40) forwards, blink 0.75s infinite;
@@ -154,7 +151,7 @@
 
         @keyframes blink {
             0%, 50% { border-color: transparent; }
-            51%, 100% { border-color: var(--neon-green); }
+            51%, 100% { border-color: var(--cyber-gold); } /* COLOR CAMBIADO */
         }
 
         .hero-buttons {
@@ -167,8 +164,8 @@
         .btn-neon {
             padding: 15px 30px;
             background: transparent;
-            border: 2px solid var(--neon-green);
-            color: var(--neon-green);
+            border: 2px solid var(--cyber-gold); /* COLOR CAMBIADO */
+            color: var(--cyber-gold); /* COLOR CAMBIADO */
             text-decoration: none;
             font-family: 'Orbitron', monospace;
             font-weight: 700;
@@ -186,14 +183,14 @@
             left: -100%;
             width: 100%;
             height: 100%;
-            background: linear-gradient(90deg, transparent, rgba(0, 255, 65, 0.2), transparent);
+            background: linear-gradient(90deg, transparent, rgba(255, 193, 7, 0.2), transparent); /* COLOR CAMBIADO */
             transition: left 0.5s;
         }
 
         .btn-neon:hover {
-            background: var(--neon-green);
+            background: var(--cyber-gold); /* COLOR CAMBIADO */
             color: #000;
-            box-shadow: 0 0 20px var(--neon-green);
+            box-shadow: 0 0 20px var(--cyber-gold); /* COLOR CAMBIADO */
             transform: translateY(-2px);
         }
 
@@ -201,8 +198,15 @@
             left: 100%;
         }
 
-        .btn-cyan { border-color: var(--neon-cyan); color: var(--neon-cyan); }
-        .btn-cyan:hover { background: var(--neon-cyan); box-shadow: 0 0 20px var(--neon-cyan); }
+        /* Botón Secundario (Rosa Neón) */
+        .btn-cyan { 
+            border-color: var(--neon-pink); 
+            color: var(--neon-pink); 
+        }
+        .btn-cyan:hover { 
+            background: var(--neon-pink); 
+            box-shadow: 0 0 20px var(--neon-pink); 
+        }
 
         /* Sections */
         .container {
@@ -212,12 +216,13 @@
         }
 
         .section-title {
+            font-family: 'Orbitron', sans-serif;
             font-size: 3rem;
             text-align: center;
             margin-bottom: 60px;
             position: relative;
-            color: var(--neon-green);
-            text-shadow: 0 0 10px var(--neon-green);
+            color: var(--cyber-gold); /* COLOR CAMBIADO */
+            text-shadow: 0 0 10px var(--cyber-gold); /* COLOR CAMBIADO */
         }
 
         .section-title::after {
@@ -228,8 +233,8 @@
             transform: translateX(-50%);
             width: 100px;
             height: 2px;
-            background: var(--neon-green);
-            box-shadow: 0 0 10px var(--neon-green);
+            background: var(--cyber-gold); /* COLOR CAMBIADO */
+            box-shadow: 0 0 10px var(--cyber-gold); /* COLOR CAMBIADO */
         }
 
         /* Projects Grid */
@@ -247,10 +252,10 @@
         }
 
         .project-card {
-            background: var(--card-dark);
+            background: var(--card-background); /* COLOR CAMBIADO */
             padding: 30px;
             border-radius: 15px;
-            border: 1px solid #333;
+            border: 1px solid var(--border-dark); /* COLOR CAMBIADO */
             position: relative;
             overflow: hidden;
             transition: all 0.3s;
@@ -264,7 +269,8 @@
             left: 0;
             right: 0;
             height: 3px;
-            background: linear-gradient(90deg, var(--neon-green), var(--neon-cyan), var(--neon-purple));
+            /* Paleta Unificada */
+            background: linear-gradient(90deg, var(--cyber-gold), var(--neon-pink), var(--neon-green));
             background-size: 200% 100%;
             animation: neon-border 2s linear infinite;
         }
@@ -277,18 +283,20 @@
         .project-card-link:hover .project-card {
             transform: translateY(-10px) scale(1.02);
             box-shadow: 
-                0 20px 40px rgba(0, 255, 65, 0.2),
-                0 0 30px rgba(0, 255, 65, 0.1);
-            border-color: var(--neon-green);
+                0 20px 40px rgba(255, 193, 7, 0.2),
+                0 0 30px rgba(255, 193, 7, 0.1); /* COLOR CAMBIADO */
+            border-color: var(--cyber-gold); /* COLOR CAMBIADO */
         }
 
         .project-card h3 {
-            color: var(--neon-cyan);
+            font-family: 'Orbitron', sans-serif;
+            color: var(--neon-green); /* Usamos verde neón para títulos secundarios */
             margin-bottom: 15px;
             font-size: 1.5rem;
         }
 
         .project-card p {
+            font-family: 'Share Tech Mono', monospace;
             color: var(--text-muted);
             line-height: 1.6;
             margin-bottom: 20px;
@@ -302,18 +310,18 @@
         }
 
         .tech-tag {
-            background: rgba(0, 255, 65, 0.1);
-            color: var(--neon-green);
+            background: rgba(255, 193, 7, 0.1); /* COLOR CAMBIADO */
+            color: var(--cyber-gold); /* COLOR CAMBIADO */
             padding: 5px 12px;
             border-radius: 20px;
             font-size: 0.8rem;
-            border: 1px solid rgba(0, 255, 65, 0.3);
+            border: 1px solid rgba(255, 193, 7, 0.3); /* COLOR CAMBIADO */
             animation: pulse 2s infinite;
         }
 
         @keyframes pulse {
-            0%, 100% { box-shadow: 0 0 5px rgba(0, 255, 65, 0.3); }
-            50% { box-shadow: 0 0 15px rgba(0, 255, 65, 0.6); }
+            0%, 100% { box-shadow: 0 0 5px rgba(255, 193, 7, 0.3); } /* COLOR CAMBIADO */
+            50% { box-shadow: 0 0 15px rgba(255, 193, 7, 0.6); } /* COLOR CAMBIADO */
         }
 
         /* Skills Section */
@@ -327,8 +335,8 @@
         .skill-item {
             text-align: center;
             padding: 30px;
-            background: rgba(0, 255, 65, 0.05);
-            border: 1px solid rgba(0, 255, 65, 0.2);
+            background: rgba(255, 193, 7, 0.05); /* COLOR CAMBIADO */
+            border: 1px solid rgba(255, 193, 7, 0.2); /* COLOR CAMBIADO */
             border-radius: 15px;
             position: relative;
             overflow: hidden;
@@ -341,7 +349,7 @@
             left: -50%;
             width: 200%;
             height: 200%;
-            background: conic-gradient(from 0deg, transparent, var(--neon-green), transparent);
+            background: conic-gradient(from 0deg, transparent, var(--cyber-gold), transparent); /* COLOR CAMBIADO */
             animation: rotate 3s linear infinite;
             opacity: 0.1;
         }
@@ -355,7 +363,7 @@
             font-size: 3rem;
             margin-bottom: 20px;
             display: block;
-            filter: drop-shadow(0 0 10px var(--neon-green));
+            filter: drop-shadow(0 0 10px var(--cyber-gold)); /* COLOR CAMBIADO */
             animation: float 3s ease-in-out infinite;
         }
 
@@ -374,7 +382,7 @@
 
         .skill-progress-fill {
             height: 100%;
-            background: linear-gradient(90deg, var(--neon-green), var(--neon-cyan));
+            background: linear-gradient(90deg, var(--cyber-gold), var(--neon-green)); /* COLOR CAMBIADO */
             border-radius: 4px;
             animation: progress-fill 2s ease-out forwards;
         }
@@ -388,10 +396,10 @@
         }
 
         .contact-item {
-            background: var(--card-dark);
+            background: var(--card-background); /* COLOR CAMBIADO */
             padding: 30px;
             border-radius: 15px;
-            border: 1px solid #333;
+            border: 1px solid var(--border-dark); /* COLOR CAMBIADO */
             text-align: center;
             transition: all 0.3s;
             position: relative;
@@ -402,8 +410,8 @@
         }
 
         .contact-item:hover {
-            border-color: var(--neon-green);
-            box-shadow: 0 0 20px rgba(0, 255, 65, 0.2);
+            border-color: var(--cyber-gold); /* COLOR CAMBIADO */
+            box-shadow: 0 0 20px rgba(255, 193, 7, 0.2); /* COLOR CAMBIADO */
             transform: translateY(-5px);
         }
 
@@ -411,7 +419,8 @@
             font-size: 2.5rem;
             margin-bottom: 15px;
             display: block;
-            filter: drop-shadow(0 0 10px var(--neon-cyan));
+            color: var(--neon-green);
+            filter: drop-shadow(0 0 10px var(--neon-green));
         }
 
         /* Responsive */
@@ -432,47 +441,45 @@
             right: 20px;
             width: 4px;
             height: 60px;
-            background: rgba(0, 255, 65, 0.3);
+            background: rgba(255, 193, 7, 0.3); /* COLOR CAMBIADO */
             border-radius: 2px;
             z-index: 1000;
         }
 
         .scroll-progress {
             height: 0%;
-            background: var(--neon-green);
+            background: var(--cyber-gold); /* COLOR CAMBIADO */
             border-radius: 2px;
             transition: height 0.1s;
         }
+        
         /* Mejoras visuales secundarias */
         .contact-item:hover .contact-icon {
-            color: var(--neon-purple);
-            filter: drop-shadow(0 0 15px var(--neon-purple));
+            color: var(--neon-pink);
+            filter: drop-shadow(0 0 15px var(--neon-pink));
         }
 
         .project-card-link {
             transition: color 0.3s;
         }
         .project-card-link:hover {
-            color: var(--neon-gold);
+            color: var(--cyber-gold);
         }
 
         .btn-neon:active {
-            border-color: var(--neon-purple);
-            color: var(--neon-purple);
-            box-shadow: 0 0 20px var(--neon-purple);
+            border-color: var(--neon-pink);
+            color: var(--neon-pink);
+            box-shadow: 0 0 20px var(--neon-pink);
         }
     </style>
 </head>
 <body class="scan-lines">
-    <!-- Matrix Rain -->
     <div class="matrix-bg" id="matrix"></div>
     
-    <!-- Scroll Indicator -->
     <div class="scroll-indicator">
         <div class="scroll-progress" id="scrollProgress"></div>
     </div>
 
-    <!-- Hero -->
     <section class="hero">
         <h1>YavlPro</h1>
         <div class="hero-subtitle" id="subtitle">
@@ -483,15 +490,14 @@
         </div>
     </section>
 
-    <!-- Projects -->
     <section class="container" id="projects">
         <h2 class="section-title">Proyectos</h2>
         <div class="projects-grid">
-            <!-- Nuevo Proyecto: La Grita Agricultora -->
-            <a href="https://yavlpro.github.io/LaGritaAgricultora/" target="_blank" class="project-card-link">
+            
+            <a href="https://yavlpro.github.io/YavlAgro/" target="_blank" class="project-card-link">
                 <div class="project-card">
-                    <h3>🌱 La Grita Agricultora</h3>
-                    <p>Plataforma digital para la comunidad agrícola de La Grita, facilitando la conexión, información y el comercio local.</p>
+                    <h3>🌱 YavlAgro</h3>
+                    <p>Plataforma digital para la comunidad agrícola, facilitando la conexión, información y el comercio local.</p>
                     <div class="project-tech">
                         <span class="tech-tag">HTML/CSS</span>
                         <span class="tech-tag">JavaScript</span>
@@ -501,7 +507,19 @@
                 </div>
             </a>
             
-            <!-- Nuevo Proyecto: YavlSuite -->
+            <a href="https://yavlgold.com/" target="_blank" class="project-card-link">
+                <div class="project-card">
+                    <h3>🚀 Yavlgold Ecosystem</h3>
+                    <p>El ecosistema educativo 100% futurista. Academy, Social, Trading, Suite y Chess.</p>
+                    <div class="project-tech">
+                        <span class="tech-tag">HTML/CSS</span>
+                        <span class="tech-tag">JavaScript</span>
+                        <span class="tech-tag">Blockchain</span>
+                        <span class="tech-tag">Educación</span>
+                    </div>
+                </div>
+            </a>
+
             <a href="https://yavlpro.github.io/YavlSuite/" target="_blank" class="project-card-link">
                 <div class="project-card">
                     <h3>🛠️ YavlSuite</h3>
@@ -514,24 +532,9 @@
                     </div>
                 </div>
             </a>
-
-            <!-- Proyecto Existente Modificado: Global Gold -->
-            <a href="https://globalgold.gold/" target="_blank" class="project-card-link">
-                <div class="project-card">
-                    <h3>⛏ Global Gold</h3>
-                    <p>Plataforma educativa de criptominería con dashboard interactivo. Proyecto estrella en desarrollo con enfoque venezolano.</p>
-                    <div class="project-tech">
-                        <span class="tech-tag">HTML/CSS</span>
-                        <span class="tech-tag">JavaScript</span>
-                        <span class="tech-tag">Blockchain</span>
-                        <span class="tech-tag">Web App</span>
-                    </div>
-                </div>
-            </a>
         </div>
     </section>
 
-    <!-- Skills -->
     <section class="container" id="skills">
         <h2 class="section-title">Habilidades</h2>
         <div class="skills-grid">
@@ -573,29 +576,29 @@
         </div>
     </section>
 
-    <!-- Contact -->
     <section class="container" id="contact">
         <h2 class="section-title">Contacto</h2>
         <div class="contact-grid">
+            
             <div class="contact-item">
                 <span class="contact-icon">📱</span>
                 <h3>Telegram</h3>
                 <p>Únete a mi canal para updates y colaboraciones</p>
-                <a href="http://t.me/YavlPro" target="_blank" class="btn-neon">Contactar</a>
+                <a href="https://t.me/YavlPro" target="_blank" class="btn-neon">Contactar</a>
             </div>
 
             <div class="contact-item">
                 <span class="contact-icon">🐦</span>
                 <h3>X (Twitter)</h3>
                 <p>Sígueme para noticias crypto y tech</p>
-                <a href="https://x.com/Yavlcapitan?t=CTvaEVF3bpP4utIomXBLAg&s=09" target="_blank" class="btn-neon">@Yavlcapitan</a>
+                <a href="https://x.com/Yavlcapitan" target="_blank" class="btn-neon">@Yavlcapitan</a>
             </div>
 
             <div class="contact-item">
                 <span class="contact-icon">📹</span>
                 <h3>YouTube</h3>
                 <p>Tutoriales y contenido educativo</p>
-                <a href="https://youtube.com/@globalgoldlc" target="_blank" class="btn-neon">Suscríbete</a>
+                <a href="https://youtube.com/@yavlgoldpro" target="_blank" class="btn-neon">Suscríbete</a>
             </div>
         </div>
     </section>
@@ -604,6 +607,7 @@
         // Matrix Rain Effect
         function createMatrixRain() {
             const matrix = document.getElementById('matrix');
+            if (!matrix) return; // Salir si el elemento no existe
             const columns = Math.floor(window.innerWidth / 20);
             
             for (let i = 0; i < columns; i++) {
@@ -622,11 +626,12 @@
                 
                 matrix.appendChild(column);
 
+                // Limpieza de columnas viejas
                 setTimeout(() => {
                     if (column.parentNode) {
                         column.parentNode.removeChild(column);
                     }
-                }, 10000);
+                }, 10000); // 10 segundos de vida
             }
         }
 
@@ -634,29 +639,51 @@
         function typeWriter() {
             const subtitle = document.getElementById('subtitle');
             if (!subtitle) return;
-            const text = subtitle.textContent.trim(); // Trim to handle whitespace
-            subtitle.textContent = '';
+            const text = subtitle.textContent.trim(); // "Developer | Crypto Enthusiast | AI Innovator"
+            subtitle.textContent = ''; // Limpiar
+            subtitle.style.width = 'auto'; // Permitir que crezca
             
             let i = 0;
             function type() {
                 if (i < text.length) {
                     subtitle.textContent += text.charAt(i);
                     i++;
-                    setTimeout(type, 100);
+                    setTimeout(type, 80); // Velocidad de tecleo
+                } else {
+                    // Mantener el cursor parpadeante
+                    subtitle.style.borderRight = '2px solid var(--cyber-gold)';
+                    subtitle.style.animation = 'blink 0.75s infinite';
                 }
             }
-            setTimeout(type, 500);
+            // Iniciar animación de tecleo
+            subtitle.style.borderRight = '2px solid var(--cyber-gold)';
+            subtitle.style.animation = 'none'; // Detener parpadeo inicial
+            setTimeout(type, 500); // Retraso inicial
         }
 
         // Progress Bars Animation
         function animateProgressBars() {
-            const fills = document.querySelectorAll('.skill-progress-fill');
-            fills.forEach(fill => {
-                const width = fill.style.width;
-                fill.style.width = '0%';
-                setTimeout(() => {
-                    fill.style.width = width;
-                }, 500);
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        const fill = entry.target.querySelector('.skill-progress-fill');
+                        if (fill) {
+                            const width = fill.getAttribute('data-width');
+                            fill.style.width = width;
+                        }
+                        observer.unobserve(entry.target);
+                    }
+                });
+            }, { threshold: 0.5 }); // Iniciar cuando el 50% esté visible
+
+            document.querySelectorAll('.skill-item').forEach(item => {
+                const fill = item.querySelector('.skill-progress-fill');
+                if (fill) {
+                    fill.setAttribute('data-width', fill.style.width); // Guardar el ancho objetivo
+                    fill.style.width = '0%'; // Poner a 0
+                    fill.style.transition = 'width 2s ease-out';
+                    observer.observe(item);
+                }
             });
         }
 
@@ -666,17 +693,22 @@
             if (!scrollProgress) return;
             const scrollTop = document.documentElement.scrollTop;
             const scrollHeight = document.documentElement.scrollHeight - document.documentElement.clientHeight;
-            const progress = (scrollTop / scrollHeight) * 100;
-            scrollProgress.style.height = progress + '%';
+            if (scrollHeight > 0) {
+                const progress = (scrollTop / scrollHeight) * 100;
+                scrollProgress.style.height = progress + '%';
+            } else {
+                scrollProgress.style.height = '0%';
+            }
         }
 
-        // Intersection Observer for animations
+        // Intersection Observer for fade-in animations
         function animateOnScroll() {
             const observer = new IntersectionObserver((entries) => {
                 entries.forEach(entry => {
                     if (entry.isIntersecting) {
                         entry.target.style.opacity = '1';
                         entry.target.style.transform = 'translateY(0)';
+                        observer.unobserve(entry.target); // Animar solo una vez
                     }
                 });
             }, { threshold: 0.1 });
@@ -693,7 +725,6 @@
         document.querySelectorAll('a[href^="#"]').forEach(anchor => {
             anchor.addEventListener('click', function (e) {
                 const href = this.getAttribute('href');
-                // Solo ejecutar el scroll si el href es un selector de ID válido (no solo '#')
                 if (href && href.length > 1) {
                     e.preventDefault();
                     const target = document.querySelector(href);
@@ -703,6 +734,7 @@
                             block: 'start'
                         });
                     }
+
                 }
             });
         });
@@ -711,8 +743,8 @@
         document.addEventListener('DOMContentLoaded', function() {
             typeWriter();
             if (document.getElementById('matrix')) {
-                createMatrixRain();
-                setInterval(createMatrixRain, 5000);
+                createMatrixRain(); // Lluvia inicial
+                setInterval(createMatrixRain, 5000); // Regenerar lluvia periódicamente
             }
             animateProgressBars();
             animateOnScroll();
@@ -726,11 +758,11 @@
             const scrolled = window.pageYOffset;
             const hero = document.querySelector('.hero');
             if (hero) {
-                const speed = scrolled * -0.3;
+                // Reducir la velocidad del parallax para un efecto más sutil
+                const speed = scrolled * -0.2; 
                 hero.style.transform = `translateY(${speed}px)`;
             }
         });
     </script>
 </body>
 </html>
-
